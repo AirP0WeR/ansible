@@ -3,7 +3,7 @@
   become: true
   become_method: sudo
   hosts: all
-  # remote_user: root
+  remote_user: airp0wer
 
   tasks:
     - name: Update apt repo and cache on all Debian/Ubuntu boxes
