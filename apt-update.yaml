@@ -6,7 +6,7 @@
   hosts: all
   # remote_user: airp0wer
 
-  sudo tasks:
+  tasks:
     - name: Update all packages to their latest version
       ansible.builtin.apt:
         name: "*"
