@@ -1,11 +1,12 @@
 ---
 - name: Update all packages to their latest version
   become: true
-  become_method: sudo
-  hosts: all
-  remote_user: airp0wer
+  # become_method: sudo
 
-  tasks:
+  hosts: all
+  # remote_user: airp0wer
+
+  sudo tasks:
     - name: Update all packages to their latest version
       ansible.builtin.apt:
         name: "*"
