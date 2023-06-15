@@ -2,7 +2,7 @@
 - name: Update all packages to their latest version
   become: true
   become_method: sudo
-  hosts: all
+  hosts: airp0werhome
   remote_user: airp0wer
 
   tasks:
