@@ -3,7 +3,7 @@
   name: Update all packages to their latest version
   become: true
   # become_method: sudo
-  remote_user: airp0wer
+  become_user: airp0wer
 
   tasks:
   - name: Update apt cache
