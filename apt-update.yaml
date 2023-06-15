@@ -3,7 +3,7 @@
   # become: true
   # become_method: sudo
   hosts: all
-  remote_user: root
+  # remote_user: root
 
   tasks:
     - name: Update apt repo and cache on all Debian/Ubuntu boxes
@@ -25,8 +25,3 @@
         post_reboot_delay: 30
         test_command: uptime
       when: reboot_required_file.stat.exists
-
-    # - name: Install microk8s
-    #   community.general.snap:
-    #     name: microk8s
-    #     classic: true
