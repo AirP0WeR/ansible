@@ -1,24 +1,28 @@
 ---
-- name: Update all packages to their latest version
+- hosts: all
+  name: Update all packages to their latest version
   become: true
   # become_method: sudo
 
-  hosts: all
+  # hosts: all
   # remote_user: airp0wer
 
   tasks:
-    - name: Update all packages to their latest version
-      ansible.builtin.apt:
-        name: "*"
-        state: latest
-    - name: Upgrade the OS (apt-get dist-upgrade)
-      ansible.builtin.apt:
-        upgrade: dist
-    - name: Pass options to dpkg on run
-      ansible.builtin.apt:
-        upgrade: dist
-        update_cache: yes
-        dpkg_options: 'force-confold,force-confdef'
+  - name: Update apt cache
+    apt:
+      update_cache: yes
+    # - name: Update all packages to their latest version
+    #   ansible.builtin.apt:
+    #     name: "*"
+    #     state: latest
+    # - name: Upgrade the OS (apt-get dist-upgrade)
+    #   ansible.builtin.apt:
+    #     upgrade: dist
+    # - name: Pass options to dpkg on run
+    #   ansible.builtin.apt:
+    #     upgrade: dist
+    #     update_cache: yes
+    #     dpkg_options: 'force-confold,force-confdef'
 
     # - name: Update apt repo and cache on all Debian/Ubuntu boxes
     #   apt: update_cache=yes force_apt_get=yes cache_valid_time=3600
